@@ -1,13 +1,21 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  books: [],
+};
 
 const bookSlice = createSlice({
-  name: 'book',
+  name: 'books',
   initialState,
   reducers: {
     bookRemove: (state, action) => {
-      state.books = state.books.filter((book) => book.id !== action.payload);
+      const books = [...state.books];
+      state.books.splice(
+        0,
+        books.length,
+        ...books.filter((book) => book.id !== action.payload),
+      );
     },
     bookAdd: (state, action) => {
       state.books.push(action.payload);

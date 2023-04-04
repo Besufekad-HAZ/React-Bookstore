@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useDispatch } from 'react-redux';
-import { bookRemove } from '../feature/Slice-Book';
+import { bookRemove } from '../redux/books/Slice-Book';
 
 const Books = ({ book }) => {
   const dispatch = useDispatch();
