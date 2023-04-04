@@ -1,5 +1,5 @@
 const BookCategories = () => (
-  <button type="button" className="status">
+  <button type="button" className="submit-btn">
     Status
   </button>
 );
