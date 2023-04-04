@@ -1,0 +1,100 @@
+/* Styles Go here */
+@import url("https://fonts.cdnfonts.com/css/stella-nova");
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../assets/library.jpg");
+  background-color: rgba(1, 10, 8, 0.4);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+}
+
+.App {
+  margin: 0 auto;
+
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Nav-parent-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-container {
+  font-size: large;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1% auto 3%;
+}
+
+.nav-container li:hover {
+  text-decoration: underline;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  font-size: larger;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+}
+
+.form-container input {
+  font-size: 20px;
+  margin-top: 2%;
+  margin-left: 4%;
+  width: 30%;
+  padding: 1%;
+  background-color: rgb(252, 252, 252, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 6px 1px rgb(255, 247, 247);
+  box-shadow: 0 2px 6px 1px rgba(255, 255, 255, 0.788);
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(37, 2, 2);
+  opacity: 1; /* Firefox */
+}
+
+.form-container button {
+  margin-top: 6%;
+}
