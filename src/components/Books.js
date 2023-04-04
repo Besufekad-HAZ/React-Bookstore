@@ -1,12 +1,17 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { bookRemove } from '../feature/Slice-Book';
 
-const Books = ({ book }) => (
-  <li>
-    <h2>{book.title}</h2>
-    <p>{book.author}</p>
-    <button type="button">Remove Book</button>
-  </li>
-);
+const Books = ({ book }) => {
+  const dispatch = useDispatch();
+    <li>
+      <h2>{book.title}</h2>
+      <p>{book.author}</p>
+      <button type="button" onClick={dispatch(bookRemove(1))}>
+        Remove
+      </button>
+    </li>;
+};
 
 Books.propTypes = {
   book: PropTypes.shape({
