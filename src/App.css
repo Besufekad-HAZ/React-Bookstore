@@ -94,7 +94,6 @@ a {
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(62, 4, 4);
-  stroke: 2px aliceblue;
   opacity: 0.7; /* Firefox */
 }
 
@@ -125,7 +124,7 @@ a {
 
 /* CSS */
 
-.submit-btn:after {
+.submit-btn::after {
   background-color: #3b0c0c;
   border-radius: 8px;
   content: "";
@@ -140,7 +139,7 @@ a {
   z-index: -1;
 }
 
-.submit-btn:hover:after {
+.submit-btn:hover::after {
   transform: translate(0, 0);
 }
 
