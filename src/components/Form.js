@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bookAdd } from '../redux/books/Slice-Book';
@@ -10,8 +9,9 @@ const BooksForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setBooks((prevBooks) => [...prevBooks, { title, author }]);
-    if (title && author) { dispatch(bookAdd({ id: Math.random(), title, author })); }
+    if (title && author) {
+      dispatch(bookAdd({ id: Math.random(), title, author }));
+    }
     setTitle('');
     setAuthor('');
   };
