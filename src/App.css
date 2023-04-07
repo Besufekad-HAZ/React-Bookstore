@@ -39,19 +39,22 @@ a {
 
 .Nav-parent-container {
   display: flex;
-  flex-direction: column;
   margin: 0 auto;
   width: 100%;
   align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 0 20%;
+  border: 2px solid white;
 }
 
 .nav-container {
   font-size: large;
-  width: 50%;
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1% auto 3%;
+  margin: auto;
 }
 
 .nav-container li:hover {
@@ -64,6 +67,14 @@ a {
   margin: 0 auto;
   width: 90%;
   font-size: larger;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 0 auto;
+  width: 30%;
 }
 
 .form-container {

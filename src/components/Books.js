@@ -7,9 +7,13 @@ const Books = ({ book }) => {
   return (
     <li>
       <h2>{book.title}</h2>
-      <p>{book.author}</p>
+      <p>
+        Author :
+        {' '}
+        <u>{book.author}</u>
+      </p>
       <div className="book-buttons">
-        <button type="button" onClick={dispatch(bookRemove(book.id))}>
+        <button type="button" onClick={() => dispatch(bookRemove(book.id))}>
           Remove
         </button>
         <button type="button">Edit</button>

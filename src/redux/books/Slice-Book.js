@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/to olkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
@@ -25,16 +25,13 @@ const bookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    bookRemove: (state, action) => {
-      const books = [...state.books];
-      state.books.splice(
-        0,
-        books.length,
-        ...books.filter((book) => book.id !== action.payload),
-      );
-    },
     bookAdd: (state, action) => {
-      state.books.push(action.payload);
+      state.push(action.payload);
+    },
+    bookRemove: (state, action) => {
+      const books = [...state];
+      state.splice(0, state.length);
+      state.push(...books.filter((book) => book.id !== action.payload));
     },
   },
 });
