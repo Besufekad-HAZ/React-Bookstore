@@ -1,25 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const initialState = [
-  {
-    id: 'Book-1',
-    title: 'To Kill a Mockingbird,',
-    author: 'Harper Lee',
-    category: 'Fiction',
+const endPoint = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/6XpfrbaRZ8nDD6eWDL5c/books';
+
+// Initial state
+const initialState = {
+  books: [],
+  status: 'idle',
+  error: null,
+};
+
+export const fetchBooks = createAsyncThunk('posts/fetchBooks', async () => {
+  const response = await axios.get(endPoint);
+  return response.data;
+});
+
+//
+export const addNewBook = createAsyncThunk(
+  'posts/addNewBook',
+  async (initialBook, { dispatch }) => {
+    const response = await axios.post(endPoint, initialBook);
+    dispatch(fetchBooks());
+    return response.data;
   },
-  {
-    id: 'Book-2',
-    title: '1984',
-    author: 'George Orwell',
-    category: 'Fiction',
+);
+
+export const deleteBook = createAsyncThunk(
+  'posts/deleteBook',
+  async (initialBook, { dispatch }) => {
+    const response = await axios.delete(
+      `${endPoint}/${initialBook}`,
+      initialBook,
+    );
+    dispatch(fetchBooks());
+    return response.data;
   },
-  {
-    id: 'Book-3',
-    title: 'The Lord of the Rings',
-    author: ' J.R.R. Tolkien',
-    category: 'Fiction',
-  },
-];
+);
 
 const bookSlice = createSlice({
   name: 'books',
