@@ -1,13 +1,17 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { bookAdd } from '../redux/books/Slice-Book';
 
-const BooksForm = ({ setBooks }) => {
+const BooksForm = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBooks((prevBooks) => [...prevBooks, { title, author }]);
+    if (title && author) {
+      dispatch(bookAdd({ id: Math.random(), title, author }));
+    }
     setTitle('');
     setAuthor('');
   };
@@ -30,13 +34,11 @@ const BooksForm = ({ setBooks }) => {
         onChange={(e) => setAuthor(e.target.value)}
         required
       />
-      <button type="submit">Add Book</button>
+      <button type="submit" className="submit-btn">
+        Add Book
+      </button>
     </form>
   );
-};
-
-BooksForm.propTypes = {
-  setBooks: PropTypes.func.isRequired,
 };
 
 export default BooksForm;

@@ -58,6 +58,8 @@ A website for organizing daily activities
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
     <li><a href="https://webpack.js.org/">Webpack</a></li>
     <li><a href="https://legacy.reactjs.org/">React website</a></li>
+    <li><a href="https://redux-toolkit.js.org/">Redux Toolkit website</a></li>
+
   </ul>
 </details>
 
@@ -84,6 +86,8 @@ A website for organizing daily activities
 - **[Javascript]** ---> with ES6
 - **[Webpack]**
 - **[React]**
+- **[Redux]**
+- **[Redux_Toolkit]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
