@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiKey = '6XpfrbaRZ8nDD6eWDL5c';
+const apiKey = 'nTlCwvFos8Sc2zAuPygn';
 const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiKey}/books`;
 // Initial state
 const initialState = {
-  bookList: [],
+  listBooks: [],
   isLoading: false,
   isBookAdded: false,
   isBookRemoved: false,
@@ -39,14 +39,14 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     bookAdd: (state, action) => {
-      state.bookList.push(action.payload);
+      state.listBooks.push(action.payload);
     },
 
     bookRemove: (state, action) => {
-      const books = [...state.bookList];
-      state.bookList.splice(0, state.bookList.length);
-      state.bookList.push(
-        ...books.filter((book) => book.id !== action.payload),
+      const books = [...state.listBooks];
+      state.listBooks.splice(0, state.listBooks.length);
+      state.listBooks.push(
+        ...books.filter((book) => book.item_id !== action.payload),
       );
     },
   },
@@ -57,15 +57,15 @@ const bookSlice = createSlice({
         isLoading: true,
       }))
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        const bookList = Object.keys(action.payload).map((key) => ({
-          id: key,
+        const listBooks = Object.keys(action.payload).map((key) => ({
+          item_id: key,
           title: action.payload[key][0].title,
           author: action.payload[key][0].author,
         }));
         return {
           ...state,
           isLoading: false,
-          bookList,
+          listBooks,
         };
       })
       .addCase(fetchBooks.rejected, (state) => ({

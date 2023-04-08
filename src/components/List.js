@@ -5,9 +5,8 @@ import Books from './Books';
 
 const ListBooks = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.ListBooks);
+  const books = useSelector((state) => state.books.listBooks);
   const isLoading = useSelector((state) => state.books.isLoading);
-
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
@@ -18,9 +17,7 @@ const ListBooks = () => {
 
   return (
     <ul className="books-container">
-      {books.map((book) => (
-        <Books key={book.id} book={book} />
-      ))}
+      {books && books.map((book) => <Books key={book.item_id} book={book} />)}
     </ul>
   );
 };

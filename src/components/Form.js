@@ -3,15 +3,15 @@ import { useDispatch } from 'react-redux';
 import { bookAdd, bookFetch } from '../redux/books/Slice-Book';
 
 const BooksForm = () => {
-  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && author) {
       const book = {
-        id: Math.random(),
+        item_id: Math.random(),
         title,
         author,
         category: 'SCI-FI',

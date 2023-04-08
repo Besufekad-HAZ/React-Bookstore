@@ -15,7 +15,8 @@ const Books = ({ book }) => {
       <div className="book-buttons">
         <button
           type="button"
-          onClick={() => dispatch(bookDel(book.id)).then(() => dispatch(bookRemove(book.id)))}
+          onClick={() => dispatch(bookDel(book.item_id))
+            .then(() => dispatch(bookRemove(book.item_id)))}
         >
           Remove
         </button>
@@ -27,7 +28,7 @@ const Books = ({ book }) => {
 
 Books.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    item_id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
