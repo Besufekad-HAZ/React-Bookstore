@@ -8,24 +8,18 @@
 }
 
 body {
-  background: url("../assets/library.jpg");
-  background-color: rgba(1, 10, 8, 0.4);
-  background-blend-mode: darken;
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
-  color: white;
+  /* background: url("../assets/library.jpg"); */
+  background-color: #090000ab;
   font-family: "Quicksand", sans-serif;
 }
 
 .App {
-  margin: 0 auto;
-
-  /* width: 50%; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
+  padding-bottom: 5rem;
 }
 
 li {
@@ -39,14 +33,24 @@ a {
 
 .Nav-parent-container {
   display: flex;
-  margin: 2% auto 0;
-  width: 50%;
+  justify-content: flex-start;
+  background-color: white;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  gap: 2rem;
+  padding-left: 4rem;
   align-items: center;
-  justify-content: space-between;
 }
 
 .Nav-parent-container h1 {
-  width: 50%;
+  color: #0290ff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 .nav-container {
@@ -54,13 +58,31 @@ a {
   width: 30%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10%;
-  margin: auto;
+  margin: 0;
+  padding: 0;
+  opacity: 0.6;
 }
 
 .nav-container li:hover {
   text-decoration: underline;
+}
+
+.nav-container li:focus {
+  color: #030000;
+}
+
+.user_icon {
+  color: #0290ff;
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 4rem;
+}
+
+.fa-icon {
+  width: 4rem;
+  height: 2rem;
 }
 
 .books-container {
