@@ -6,7 +6,7 @@ const BookCategories = () => {
   return (
     <button
       type="button"
-      className="submit-btn"
+      className="update-progress"
       onClick={() => dispatch(catagorystatus())}
     >
       Status

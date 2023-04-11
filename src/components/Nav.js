@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { FaRegUserCircle } from 'react-icons/fa';
 
@@ -7,10 +7,22 @@ const NavBar = () => (
     <h1>Bookstore CMS</h1>
     <ul className="nav-container">
       <li>
-        <Link to="/"> BOOKS </Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'link-active' : 'link')}
+        >
+          {' '}
+          BOOKS
+          {' '}
+        </NavLink>
       </li>
       <li>
-        <Link to="/categories">CATEGORIES</Link>
+        <NavLink
+          to="/categories"
+          className={({ isActive }) => (isActive ? 'link-active' : 'link')}
+        >
+          CATEGORIES
+        </NavLink>
       </li>
     </ul>
     <div className="user_icon">

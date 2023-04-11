@@ -9,7 +9,7 @@
 
 body {
   /* background: url("../assets/library.jpg"); */
-  background-color: #090000ab;
+  background-color: #eae3e3;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -35,11 +35,13 @@ a {
   display: flex;
   justify-content: flex-start;
   background-color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #ccc;
   gap: 2rem;
-  padding-left: 4rem;
+  padding-left: 7.5%;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .Nav-parent-container h1 {
@@ -66,10 +68,22 @@ a {
 
 .nav-container li:hover {
   text-decoration: underline;
+  font-weight: bolder;
 }
 
 .nav-container li:focus {
   color: #030000;
+  font-weight: bolder;
+}
+
+.nav-container li:active {
+  font-weight: bolder;
+}
+
+.link-active {
+  text-decoration: underline;
+  color: black;
+  font-weight: 800;
 }
 
 .user_icon {
@@ -89,8 +103,142 @@ a {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
   font-size: larger;
+  padding: 0;
+}
+
+.book {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  margin-bottom: 2%;
+  padding: 2% 4%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.title {
+  align-self: flex-start;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.line {
+  width: 0.055rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
+  border: solid 1px #b9b7b728;
+  background-color: #e8e8e8;
+}
+
+li.book .book-progress {
+  display: flex;
+  gap: 1rem;
+}
+
+.book-progress .text-peogress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.book-chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1vh;
+}
+
+.update-progress {
+  width: 11.5rem;
+  height: 2.063rem;
+  font-size: 0.813rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+}
+
+.current-chapter {
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #121212;
+}
+
+.current-lesson {
+  color: #121212;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.Percent-Complete {
+  font-size: 2rem;
+  color: #121212;
+}
+
+.Complete-text {
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.comments,
+.remove,
+.edit,
+.author {
+  margin: 0.188rem 5% 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 2%;
 }
 
 .book-buttons {
@@ -101,94 +249,80 @@ a {
   width: 30%;
 }
 
+.line-2 {
+  width: 0.125rem;
+  height: 1.2rem;
+  margin: 2%;
+  border: solid 1px #e8e8e8;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
-  color: white;
+  gap: 1.5vh;
+  align-items: flex-start;
 }
 
-.form-container input {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 1.5rem;
-  margin-top: 2%;
-  margin-left: 4%;
-  width: 30%;
-  padding: 1%;
-  background-color: rgba(255, 255, 255, 0.5);
+.form-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+form {
+  display: flex;
+  gap: 2vw;
+  max-width: calc(100vw - 4rem);
+}
+
+.add-book-title {
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  border: solid 1px #e8e8e8;
+  padding: 0.8rem 1rem;
+  width: 59.5vh;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.add-book-author {
+  padding: 0.8rem 1rem;
+  width: 25vw;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: -0.15px;
+}
+
+.add-btn {
+  width: 15vw;
+  height: 2.813rem;
+  border-radius: 3px;
+  background-color: #0290ff;
   outline: none;
   border: none;
-  color: rgb(62, 4, 4);
-  border-radius: 10px;
-  -webkit-box-shadow: 0 2px 6px 1px rgb(255, 247, 247);
-  box-shadow: 0 2px 6px 1px rgba(255, 255, 255, 0.788);
-}
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(62, 4, 4);
-  opacity: 0.7; /* Firefox */
-}
-
-.submit-btn {
-  margin-top: 6%;
-  align-items: center;
-  background-color: white;
-  border: 2px solid #330606;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #090000;
-  cursor: pointer;
-  display: flex;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 25px;
-  position: relative;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  color: #fff;
+  cursor: pointer;
 }
 
-/* CSS */
-
-.submit-btn::after {
-  background-color: #3b0c0c;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform 0.2s ease-out;
-  z-index: -1;
+.add-btn:hover {
+  color: #0290ff;
+  background-color: white;
+  border: 2px solid #0290ff;
 }
 
-.submit-btn:hover::after {
-  transform: translate(0, 0);
-}
-
-.submit-btn:active {
-  background-color: #ffdeda;
-  outline: 0;
-}
-
-.submit-btn:hover {
-  outline: 0;
-}
-
-@media (min-width: 768px) {
-  .submit-btn {
-    padding: 0 40px;
-  }
+hr {
+  margin: 0 7.5%;
+  color: #e8e8e8;
 }
