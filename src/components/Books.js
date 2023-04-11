@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { CircularProgressbar } from 'react-circular-progressbar';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'react-circular-progressbar/dist/styles.css';
 import { bookRemove, bookDel } from '../redux/books/Slice-Book';
 
@@ -47,13 +45,13 @@ const Books = ({ book }) => {
           </button>
         </div>
       </div>
-      <div className="book-progress">
-        <div style={{ height: 50, width: 50 }}>
+      <div className="book_progress">
+        <div style={{ width: 60 }}>
           <CircularProgressbar value={percent} />
         </div>
-        <div className="text-peogress">
-          <span className="Percent-Complete">{`${percent}%`}</span>
-          <span className="Complete-text">Completed</span>
+        <div className="progress">
+          <span className="Percentage">{`${percent}%`}</span>
+          <span className="text-completed">Completed</span>
         </div>
       </div>
       <div className="line" />

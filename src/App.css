@@ -8,7 +8,6 @@
 }
 
 body {
-  /* background: url("../assets/library.jpg"); */
   background-color: #eae3e3;
   font-family: "Quicksand", sans-serif;
 }
@@ -146,12 +145,12 @@ a {
   background-color: #e8e8e8;
 }
 
-li.book .book-progress {
+.book_progress {
   display: flex;
   gap: 1rem;
 }
 
-.book-progress .text-peogress {
+.progress {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -204,16 +203,16 @@ li.book .book-progress {
   letter-spacing: -0.4px;
 }
 
-.Percent-Complete {
-  font-size: 2rem;
+.Percentage {
   color: #121212;
+  font-size: 2.2rem;
 }
 
-.Complete-text {
-  opacity: 0.5;
-  font-size: 0.875rem;
+.text-completed {
   font-weight: normal;
   letter-spacing: normal;
+  opacity: 0.6;
+  font-size: 0.875rem;
   color: #121212;
 }
 
@@ -254,6 +253,11 @@ li.book .book-progress {
   height: 1.2rem;
   margin: 2%;
   border: solid 1px #e8e8e8;
+}
+
+hr {
+  margin: 0 7.5%;
+  color: #e8e8e8;
 }
 
 .form-container {
@@ -320,9 +324,4 @@ form {
   color: #0290ff;
   background-color: white;
   border: 2px solid #0290ff;
-}
-
-hr {
-  margin: 0 7.5%;
-  color: #e8e8e8;
 }
