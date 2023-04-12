@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiKey = 'nTlCwvFos8Sc2zAuPygn';
+const apiKey = 's7wzbdRkbhNjRQyGNgkB';
 const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiKey}/books`;
 // Initial state
 const initialState = {

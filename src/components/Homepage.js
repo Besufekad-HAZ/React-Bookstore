@@ -4,6 +4,7 @@ import ListBooks from './List';
 const Homepage = () => (
   <>
     <ListBooks />
+    <hr />
     <BooksForm />
   </>
 );

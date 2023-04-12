@@ -1,26 +1,71 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { bookRemove, bookDel } from '../redux/books/Slice-Book';
 
 const Books = ({ book }) => {
   const dispatch = useDispatch();
+  const [percent, setPercent] = useState(10);
+
+  // Progress Handle
+  const handleProgress = () => {
+    if (percent < 80) {
+      setPercent(percent + 15);
+    } else setPercent(100);
+  };
+
+  const handleRemoveBook = (book) => {
+    dispatch(bookDel(book.item_id)).then(() => dispatch(bookRemove(book.item_id)));
+  };
+
   return (
-    <li>
-      <h2>{book.title}</h2>
-      <p>
-        Author :
-        {' '}
-        <u>{book.author}</u>
-      </p>
-      <div className="book-buttons">
-        <button
-          type="button"
-          onClick={() => dispatch(bookDel(book.item_id))
-            .then(() => dispatch(bookRemove(book.item_id)))}
-        >
-          Remove
+    <li className="book">
+      <div className="detail">
+        <p className="catagory">Non-fiction</p>
+        <div className="title">{book.title}</div>
+        <button className="author" type="button">
+          {book.author}
         </button>
-        <button type="button">Edit</button>
+        <div className="book-actions">
+          <button className="comments" type="button">
+            Comments
+          </button>
+          <div className="line-2" />
+          <button
+            className="remove"
+            type="button"
+            onClick={() => handleRemoveBook(book)}
+          >
+            Remove
+          </button>
+          <div className="line-2" />
+          <button className="edit" type="button">
+            Edit
+          </button>
+        </div>
+      </div>
+      <div className="book_progress">
+        <div style={{ width: 60 }}>
+          <CircularProgressbar value={percent} />
+        </div>
+        <div className="progress">
+          <span className="Percentage">{`${percent}%`}</span>
+          <span className="text-completed">Completed</span>
+        </div>
+      </div>
+      <div className="line" />
+      <div className="book-chapter">
+        <span className="current-chapter">Current Chapter</span>
+        <h2 className="current-lesson">Chapter 15</h2>
+        <button
+          className="update-progress"
+          onClick={handleProgress}
+          type="button"
+        >
+          Update Progress
+        </button>
       </div>
     </li>
   );

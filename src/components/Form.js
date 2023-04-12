@@ -25,27 +25,31 @@ const BooksForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <input
-        type="text"
-        className="title"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <input
-        type="text"
-        className="author"
-        placeholder="Author"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        required
-      />
-      <button type="submit" className="submit-btn">
-        Add Book
-      </button>
-    </form>
+    <section className="form-container">
+      <div className="form-title">ADD NEW BOOK</div>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="add-book-title"
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Book title"
+          required
+        />
+        <input
+          className="add-book-author"
+          type="text"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          placeholder="Book author"
+          required
+          pattern="([A-ZΆ-ΫÀ-ÖØ-Þ][A-ZΆ-ΫÀ-ÖØ-Þa-zά-ώß-öø-ÿ]{1,19} ?){1,10}"
+        />
+        <button className="add-btn" type="submit">
+          ADD BOOK
+        </button>
+      </form>
+    </section>
   );
 };
 

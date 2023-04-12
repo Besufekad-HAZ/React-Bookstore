@@ -1,16 +1,32 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 const NavBar = () => (
   <nav className="Nav-parent-container">
     <h1>Bookstore CMS</h1>
     <ul className="nav-container">
       <li>
-        <Link to="/"> Books </Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'link-active' : 'link')}
+        >
+          {' '}
+          BOOKS
+          {' '}
+        </NavLink>
       </li>
       <li>
-        <Link to="/categories">Categories</Link>
+        <NavLink
+          to="/categories"
+          className={({ isActive }) => (isActive ? 'link-active' : 'link')}
+        >
+          CATEGORIES
+        </NavLink>
       </li>
     </ul>
+    <div className="user_icon">
+      <FaRegUserCircle className="fa-icon" />
+    </div>
   </nav>
 );
 
