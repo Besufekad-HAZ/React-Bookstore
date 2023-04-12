@@ -23,6 +23,7 @@ const Books = ({ book }) => {
   return (
     <li className="book">
       <div className="detail">
+        <p className="catagory">Non-fiction</p>
         <div className="title">{book.title}</div>
         <button className="author" type="button">
           {book.author}
@@ -57,7 +58,7 @@ const Books = ({ book }) => {
       <div className="line" />
       <div className="book-chapter">
         <span className="current-chapter">Current Chapter</span>
-        <h2 className="current-lesson">Chapter 17</h2>
+        <h2 className="current-lesson">Chapter 15</h2>
         <button
           className="update-progress"
           onClick={handleProgress}
